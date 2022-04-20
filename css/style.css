@@ -1,9 +1,9 @@
 /* RESET */
 :root {
-    --primaria: #FFAEBC;
-    --secundaria: #A0E7E5;
-    --terciaria: #B4F8C8;
-    --clara: #FBE7C6;
+    --primaria: #6c3fc0;
+    --secundaria: #c197f7;
+    --terciaria: #c197f7;
+    --clara: #c197f7;
     --escura: #2b2b2b;
     --tamanho-fonte-md: 16px;
     --tamanho-fonte-sm: .875rem;
@@ -11,7 +11,7 @@
   }
   
   * {
-    background-color: rgba(255,0,0,.05);
+    background-color: rgba(111, 0, 255, 0.05);
     /* border: 1px solid red; */
     box-sizing: border-box;
     font-size: var(--tamanho-fonte-md);
@@ -44,7 +44,7 @@
     font-size: var(--tamanho-fonte-sm);
   }
   main {
-    border: 1px solid red;
+    border: 1px solid black;
     margin: 16px;
     padding: 8px;
     width: 500px;
