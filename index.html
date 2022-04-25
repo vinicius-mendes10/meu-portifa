@@ -46,139 +46,122 @@
     </nav>
   </header>
 
-  <main>
+  <main class="flex-container flex-container--col skills dark">
+
     <h2>HABILIDADES</h2>
-    <p>Olhagi como sou habilidoso!</p>
-    <section>
-      <h3>HARD SKILLS</h3>
-      <article>
-        <img src="https://riccardoslanzi.com/media/16/introduzione-git.png" alt="Git" width="250" height="auto">
-        <h4>git e gitFlow</h4>
-        <p>Estou familiarizado com git e prometo que não vou fazer deploy de sexta.</p>
+    <p>Saca só como sou habilidoso!</p>
+
+    <section class="flex-container flex-container--row skills__hard">
+      <h3 class="skills__title">HARD SKILLS</h3>
+      <article class="skill">
+        <div class="flex-container flex-container--col skill__container">
+          <div class="skill__img">
+            <img src="https://riccardoslanzi.com/media/16/introduzione-git.png" alt="Git" width="auto" height="auto">
+          </div>
+          <div class="skill__text">
+            <h4 class="skill__title">git e gitFlow</h4>
+            <p class="skill__description">Estou familiarizado com git e prometo que não vou fazer deploy de sexta.</p>
+          </div>
+        </div>
       </article>
-      <article>
-        <img src="https://storage.googleapis.com/static.meupc.net/wp/1/2021/04/td_html.jpg" alt="HTML" width="250" height="auto">
-        <h4>HTML5</h4>
-        <p>Meu HTML é semântico pacas.</p>
+      <article class="skill">
+        <div class="flex-container flex-container--col skill__container">
+          <div class="skill__img">
+            <img src="https://storage.googleapis.com/static.meupc.net/wp/1/2021/04/td_html.jpg" alt="HTML" width="auto" height="auto">
+          </div>
+          <div class="skill__text">
+            <h4 class="skill__title">HTML5</h4>
+            <p class="skill__description">Meu HTML é semântico pacas.</p>
+          </div>
+        </div>
       </article>
-      <article>
-        <img src="https://www.brunodulcetti.com/static/fcd30c8735ee8c71261d0e79b7ee5c47/86e90/css.jpg" alt="CSS" width="250" height="auto">
-        <h4>CSS</h4>
-        <p>Meu CSS aplica um estilo muito estiloso.</p>
+      <article class="skill">
+        <div class="flex-container flex-container--col skill__container">
+          <div class="skill__img">
+            <img src="https://www.brunodulcetti.com/static/fcd30c8735ee8c71261d0e79b7ee5c47/86e90/css.jpg" alt="CSS" width="auto" height="auto">
+          </div>
+          <div class="skill__text">
+            <h4 class="skill__title">CSS</h4>
+            <p class="skill__description">Meu CSS aplica um estilo muito estiloso.</p>
+          </div>
+        </div>
       </article>
-      <article>
-        <img src="https://files.tecnoblog.net/wp-content/uploads/2021/02/o_que_e_node_js-e1612977170388-700x393.jpg" alt="JS" width="250" height="auto">
-        <h4>JS</h4>
-        <p>Além de JS Vanilla, também já sei trabalhar com NodeJS e ReactJS.</p>
+      <article class="skill">
+        <div class="flex-container flex-container--col skill__container">
+          <div class="skill__img">
+            <img src="https://files.tecnoblog.net/wp-content/uploads/2021/02/o_que_e_node_js-e1612977170388-700x393.jpg" alt="JS" width="auto" height="auto">
+          </div>
+          <div class="skill__text">
+            <h4 class="skill__title">JS</h4>
+            <p class="skill__description">Além de JS Vanilla, também já sei trabalhar com NodeJS e ReactJS.</p>
+          </div>
+        </div>
       </article>
     </section>
-    <section>
-      <h3>OFERTA IMPERDÍVEL!</h3>
-      <p>Solicite um orçamento e ganhe até 1% de desconto - oferta por tempo limitado.</p>
-      <form action="/" method="GET">
 
-        <fieldset>
-          <legend>Dados de Acesso</legend>
-
-          <label for="email">Email:*</label>
-          <input type="email" required disabled name="email" id="email" value="bill@gates.com" placeholder="steve@jobs.com">
-          <br>
-          <label for="senha">Senha:</label>
-          <input type="password" name="pass" id="senha" minlength="6" maxlength="8">
-          <br>
-          <small>No mínimo 6 e no máximo 8 caracteres</small>
-          <!-- <big>Esse é uma tag big</big> -->
-        </fieldset>
-        <fieldset>
-          <legend>Dados Pessoais</legend>
-
-          <label for="nome">Nome:*</label>
-          <input type="text" required name="name" id="nome" placeholder="Bill Gates" value="Bill Gates">
-          <br>
-          <label for="phone">Telefone:*</label>
-          <input type="tel" required name="phone" id="phone">
-          <br>
-          <label for="site">Site:</label>
-          <input type="url" name="site" id="site">
-          <br>
-          <label for="nascimento">Dia e hora de nascimento:</label>
-          <input type="datetime-local" name="nascimento" id="nascimento">
-          <br>
-          <label for="datapreferida">Dia do ano que mais gosta:</label>
-          <input type="date" name="datapreferida" id="datapreferida">
-          <br>
-          <label for="cor-preferida">Qual sua cor preferida?</label>
-          <input type="color" name="color" id="cor-preferida" value="#f15722">
-          <br>
-          <label>Sexo:</label>
-          <input type="radio" value="female" name="gender" id="female">
-          <label for="female">Feminino</label>
-          <input type="radio" value="male" name="gender" id="male">
-          <label for="male">Masculino</label>
-          <input type="radio" value="other" name="gender" id="other">
-          <label for="other">Outro</label>
-          <input type="radio" value="none" name="gender" id="none">
-          <label for="none">Prefiro não dizer</label>
-        </fieldset>
-
-        <fieldset>
-          <legend>Sobre a Oportunidade:</legend>
-          <label for="salario">Salário</label>
-          <input type="number" name="salary" id="salario" step="10000" min="10000" max="100000">
-          <br>
-          <label for="nivelDeStressDiario">Nível de estresse diário:</label>
-          <input type="range" name="nivel-de-stress-diario" id="nivelDeStressDiario" step="10" min="0" max="100">
-          <br>
-          <label>Atuação da Vaga:</label>
-          <select name="role" id="atuacao" required>
-            <option value="" disabled selected>SELECIONE UMA OPÇÃO</option>
-            <option value="back">Back End</option>
-            <option value="front">Front End</option>
-            <option value="fullstack">Full Stack</option>
-            <option value="devops">DevOps</option>
-          </select>
-          <br>
-          <label for="msg">Descrição da Oportunidade:</label>
-          <br>
-          <textarea name="message" id="msg" cols="30" rows="10"></textarea>
-        </fieldset>
-
-        <fieldset>
-          <legend>Informações Complementares</legend>
-          <label for="entrada">Que horas vou ter que acordar?</label>
-          <input type="time" name="x" id="entrada">
-          <label for="saida">Que horas começa o Happy Hour?</label>
-          <input type="time" name="y" id="saida">
-
-          <input type="checkbox" name="optin" id="optin" required>
-          <label for="optin">Estou ciente que, mandando essa mensagem, estarei contratando o Vinicius no regime CLT por no mínimo 100K de salário + benefícios.</label>
-        </fieldset>
-
+    <section class="flex-container flex-container--col skills__cta primary">
+      <h3 class="skills__title cta__title">CONTE COMIGO</h3>
+      <p class="cta__description">Envie sua mensagem e responderei o quanto antes.</p>
+      <form action="/" method="GET" class="cta__form">
         <input type="hidden" value="campanha-pascoa-2022">
 
-        <button type="reset" title="Limpar">Limpar</button>
-        <button disabled>Garanta sua oferta VIP</button>
-        <button title="Garantir dev">Me garanta na sua empresa!</button>
+        <div class="input-group">
+          <label for="email">Email*</label>
+          <input type="email" required name="email" id="email" placeholder="steve@jobs.com">
+        </div>
+
+        <div class="input-group">
+          <label for="nome">Nome*</label>
+          <input type="text" required name="name" id="nome" placeholder="Bill Gates">
+        </div>
+
+        <div class="input-group">
+          <label for="phone">Telefone*</label>
+          <input type="tel" required name="phone" id="phone" placeholder="+55 11 987654321">
+        </div>
+
+        <div class="submit-group">
+          <button title="Garantir dev">Enviar</button>
+        </div>
+
       </form>
     </section>
-    <section>
-      <h3>SOFT SKILLS</h3>
-      <article>
-        <ul>
-          <li>Agile</li>
-          <li>Comunicação</li>
-          <li>Inteligência Emocional</li>
-          <li>Liderança</li>
-          <li>TOC</li>
-          <li>Trabalho em Equipe</li>
-        </ul>
+
+    <section class="flex-container flex-container--row skills__soft darker">
+      <h3 class="skills__title">SOFT SKILLS</h3>
+      <article class="skill">
+        <h4>Agile</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus repellat voluptate fugit animi explicabo.</p>
+      </article>
+      <article class="skill">
+        <h4>Comunicação</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus repellat voluptate fugit animi explicabo.</p>
+      </article>
+      <article class="skill">
+        <h4>Inteligência Emocional</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus repellat voluptate fugit animi explicabo.</p>
+      </article>
+      <article class="skill">
+        <h4>Liderança</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus repellat voluptate fugit animi explicabo.</p>
+      </article>
+      <article class="skill">
+        <h4>TOC</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus repellat voluptate fugit animi explicabo.</p>
+      </article>
+      <article class="skill">
+        <h4>Trabalho em Equipe</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus repellat voluptate fugit animi explicabo.</p>
       </article>
     </section>
+
   </main>
 
-  <aside>
+  <aside class="flex-container flex-container--col xp dark">
+
     <h2>EXPERIÊNCIA PROFISSIONAL</h2>
-    <section>
+
+    <section class="flex-container flex-container--col">
       <h3>Projetos</h3>
       <ul>
         <li>Site Institucional da AMBEV</li>
@@ -187,26 +170,33 @@
         <li>eCommerce da Apple</li>
       </ul>
     </section>
-    <section>
+
+    <section class="flex-container flex-container--col">
       <h3>Recomendações</h3>
       <article>
-        <cite>O Vinicius é um filho muito bom! Meu filho preferido (não conte pra irmã dele). Por isso, sei que vai ser um bom dev. Palavra de mãe.</cite>
+        <cite>O Marcelo é um filho muito bom! Meu filho preferido (não conte pra irmã dele). Por isso, sei que vai ser um bom dev. Palavra de mãe.</cite>
       </article>
       <article>
-        <cite>O Vinicius é um neto muito bom! Meu neto preferido (não conte pra irmã dele). Por isso, sei que vai ser um bom dev. Palavra de avó.</cite>
+        <cite>O Marcelo é um neto muito bom! Meu neto preferido (não conte pra irmã dele). Por isso, sei que vai ser um bom dev. Palavra de avó.</cite>
       </article>
     </section>
+
   </aside>
 
   <footer>
-    <ul>
+
+    <ul class="flex-container flex-container--row">
+
       <li>
-        <a href="https://outlook.live.com/mail/0/?subject=Contrata%20n%C3%B3is%20a%C3%AA&body=Contrata%20n%C3%B3is%20a%C3%AA&cc=egidio@serri.com">Vinicius_q13@hotmail.com</a>
+        <a href="mailto:marcelodiament@marcelodiament.com">marcelodiament@marcelodiament.com</a>
       </li>
+
       <li>
-        <a href="https://wa.me/+5511954451226?text=Ol%C3%A1%21%20Contrata%20n%C3%B3is%20a%C3%AA%2C%20na%20humilde." target="_blank" rel="noopener noreferrer" title="Manda um zap prá nóis">11 954451226</a>
+        <a href="https://wa.me/+5511976052723?text=Ol%C3%A1%21%20Contrata%20n%C3%B3is%20a%C3%AA%2C%20na%20humilde." target="_blank" rel="noopener noreferrer" title="Manda um zap prá nóis">11 987654321</a>
       </li>
+
     </ul>
+
   </footer>
 
 </body>
