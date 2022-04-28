@@ -65,6 +65,7 @@
     padding: var(--spacing-size-default);
     position: sticky;
     top: 0;
+    z-index: 1;
   }
   footer {
     align-items: center;
@@ -157,6 +158,16 @@
     fill: var(--color-primary);
   }
   /* Estilo aplicado por classes (agrupamento genérico) */
+  .hidden {
+    opacity: 0;
+    visibility: hidden;
+    color: transparent;
+    background-color: transparent;
+    height: 0;
+    width: 0;
+    margin: 0 !important;
+    padding: 0;
+  }
   /* flexBox customizada */
   .flex-container {
     align-items: stretch;
@@ -258,6 +269,13 @@
     justify-content: flex-start;
   }
   header.menu .avatar {
+    animation-name: giroMortal;
+    animation-delay: 2s;
+    animation-direction: alternate;
+    animation-duration: 10s;
+    /* animation-iteration-count: 2; */
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
     background-color: var(--color-dark);
     border: 8px solid var(--color-dark);
     border-radius: var(--border-radius-circle);
@@ -270,6 +288,10 @@
     width: 80px;
   }
   header.menu .avatar .avatar__img {
+    animation-name: espichar;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(-1, 0.53, 0.515, 0.955);
     display: block;
     height: 72px;
     margin: auto;
@@ -299,7 +321,22 @@
   }
   .skills .skills__hard .skill,
   .skills .skills__soft .skill {
-    flex: 1 1 50%;
+    flex: 1 1 100%;
+    padding: var(--spacing-size-default);
+    position: relative;
+  }
+  .skills .skills__hard .skill::after {
+    content: '</>';
+    background-color: var(--color-darker);
+    color: var(--color-primary);
+    position: absolute;
+    top: var(--spacing-size-double);
+    left: var(--spacing-size-double);
+    font-weight: bold;
+    padding: var(--spacing-size-half);
+    border-radius: var(--border-radius-circle);
+    border: 2px solid var(--color-primary);
+    font-size: var(--font-size-md);
   }
   .skills .skills__hard .skill .skill__container,
   .skills .skills__soft .skill .skill__container {
@@ -321,6 +358,15 @@
   .skills .skills__hard .skill .skill__text,
   .skills .skills__soft .skill .skill__text {
     padding: var(--spacing-size-half) var(--spacing-size-default);
+  }
+  .skills .skills__hard .skill .skill__text .skill__title {
+    position: relative;
+  }
+  .skills .skills__hard .skill .skill__text .skill__title::before {
+    content: attr(data-title);
+    color: var(--color-lighter);
+    position: relative;
+    left: -16px;
   }
   .skills .skills__hard .skill .skill__text .skill__description,
   .skills .skills__soft .skill .skill__text .skill__description {
@@ -381,50 +427,104 @@
     border: none;
     border-radius: var(--border-radius-default);
     color: var(--color-primary);
+    cursor: pointer;
     padding: var(--spacing-size-half) var(--spacing-size-default);
     font-family: var(--font-family-title);
   }
-  
   .xp {
     padding: var(--spacing-size-default) !important;
     width: -webkit-fill-available;
   }
-  
   .xp>h2 {
     margin: 0;
   }
+  ::selection {
+    color: var(--color-darker);
+    background-color: var(--color-primary);
+  }
   
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary);
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: var(--color-lighter);
+  }
+  
+  @keyframes espichar {
+    from {
+      transform: scaleY(1);
+      filter: grayscale(1);
+    }
+    to {
+      transform: scaleY(2);
+      filter: grayscale(0);
+    }
+  }
+  @keyframes giroMortal {
+    0% {
+      border: 8px solid var(--color-dark);
+      transform: rotateZ(0deg);
+    }
+    50% {
+      border: 8px solid var(--color-secondary);
+      transform: rotateZ(1800deg);
+    }
+    100% {
+      border: 8px solid var(--color-primary);
+      transform: rotateZ(0deg);
+    }
+  }
   @media only screen and (min-width: 480px) {
     :root {
       --color-primary: #f00;
       --color-secondary: rgb(255 0 0 / 50%);
     }
-  
+    .skills .skills__hard .skill,
+    .skills .skills__soft .skill {
+      flex: 1 1 50%;
+    }
     .flex-container.flex-container--row article {
       flex: 1 1 0;
       margin: var(--spacing-size-default) 0;
       min-width: 50%;
     }
-  
     .flex-container.flex-container--row article:nth-child(even) div {
       margin: 0 var(--spacing-size-half) 0 0;
     }
-  
     .flex-container.flex-container--row article:nth-child(odd) div {
       margin: 0 0 0 var(--spacing-size-half);
     }
   }
-  
-  
   @media only screen and (min-width: 768px) {
     :root {
       --color-primary: #0f0;
       --color-secondary: rgb(0 255 0 / 50%);
     }
   }
-  
+  @media only screen and (min-width: 1366px) {
+    :root {
+      --color-primary: #f0f;
+      --color-secondary: rgb(255 0 255 / 50%);
+    }
+    .skills .skills__hard .skill,
+    .skills .skills__soft .skill {
+      flex: 0 1 25%;
+    }
+    .flex-container.flex-container--row article {
+      min-width: 25%;
+    }
+    .flex-container.flex-container--row article:nth-child(even) div,
+    .flex-container.flex-container--row article:nth-child(odd) div {
+      margin: var(--spacing-size-half);
+    }
+  }
   @media print {
-  
     *,
     html,
     body,
@@ -437,7 +537,6 @@
       background-color: #fff !important;
       color: #000 !important;
     }
-  
     img {
       filter: grayscale(1) !important;
     }
